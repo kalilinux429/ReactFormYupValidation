@@ -1,17 +1,118 @@
+
+/* Global Styles */
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7; /* Soft grey background for modern look */
+  color: #333333; /* Neutral dark text color */
+  margin: 0;
+  padding: 0;
 }
 
-.form {
+/* Wrapper for Centering */
+.wrapper {
+  margin:0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 40px); /* Adjusting for potential margins */
+  padding: 20px;
 }
 
-.form label {
-  margin-right: 10px;
+/* Form Container */
+.form {
+  background: #ffffff; /* Clean white background */
+  border: 1px solid #dcdcdc; /* Light grey border for subtle contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Hover effect */
+}
+
+.form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #555555; /* Neutral grey for labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #f9f9f9; /* Light grey for input background */
+  color: #333333; /* Dark grey for text */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  border-color: #5c85ff; /* Blue highlight on focus */
+  box-shadow: 0 0 5px rgba(92, 133, 255, 0.5);
+  outline: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #5c85ff; /* Blue for checkbox accent */
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #5c85ff, #3a69dd); /* Vibrant blue gradient */
+  color: #ffffff; /* White text for contrast */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #3a69dd, #5c85ff);
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Error Styles */
 .error {
-  color: red;
+  color: #e63946; /* Red for error messages */
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form {
+    padding: 20px;
+    width: 90%;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+  }
 }
